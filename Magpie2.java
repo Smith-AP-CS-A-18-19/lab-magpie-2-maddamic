@@ -16,7 +16,7 @@ public class Magpie2 {
 	 * @return a greeting
 	 */
 	public String getGreeting() {
-		return "Hello, let's talk.";
+		return "Hola amigo, how are you?";
 	}
 
 	/**
@@ -27,15 +27,48 @@ public class Magpie2 {
 	 * @return a response based on the rules given
 	 */
 	public String getResponse(String statement) {
+		// statement = statement.lowerCase();
 		String response = "";
 		if (statement.indexOf("no") >= 0) {
 			response = "Why so negative?";
+		} else if (statement.indexOf("I'm good") >= 0
+					 || statement.indexOf("Im good") >= 0
+					 || statement.indexOf("im good") >= 0)
+		{
+						 response = "That's great! Tell me more!";
+		} else if (statement.indexOf("not good") >= 0
+		 			 || statement.indexOf("Not good") >= 0
+		 			 || statement.indexOf("I'm bad") >= 0
+					 || statement.indexOf("Im bad") >= 0
+					 || statement.indexOf("im bad") >= 0)
+	  {
+		 				 response = "Awwww man. Why's that?";
+		} else if (statement.indexOf("How are you") >= 0)
+		{
+			response = "I'm good. How is life?";
 		} else if (statement.indexOf("mother") >= 0
 				   || statement.indexOf("father") >= 0
 				   || statement.indexOf("sister") >= 0
-				   || statement.indexOf("brother") >= 0)
+				   || statement.indexOf("brother") >= 0
+					 || statement.indexOf("family") >= 0)
 		{
 			response = "Tell me more about your family.";
+		} else if (statement.indexOf("dog") >= 0
+					 || statement.indexOf("cat") >= 0
+					 || statement.indexOf("bird") >= 0
+					 || statement.indexOf("fish") >= 0
+					 || statement.indexOf("rock") >= 0
+					 || statement.indexOf("pet") >= 0)
+		{
+			response = "Tell me more about your pets.";
+		} else if (statement.indexOf("football") >= 0
+					 || statement.indexOf("basketball") >= 0
+					 || statement.indexOf("soccer") >= 0
+					 || statement.indexOf("badminton") >= 0
+					 || statement.indexOf("hockey") >= 0
+					 || statement.indexOf("swimming") >= 0)
+		{
+			response = "Tell me more about your sports.";
 		} else {
 			response = getRandomResponse();
 		}
