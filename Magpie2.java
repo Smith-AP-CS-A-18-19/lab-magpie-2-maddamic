@@ -10,6 +10,8 @@
  * @author Laurie White
  * @version April 2012
  */
+//Michael Maddalon
+
 public class Magpie2 {
 	/**
 	 * Get a default greeting
